@@ -11,16 +11,16 @@ class ApiService {
 
   final BaseService _abstractService = BaseService('api');
 
-  Future<String> getName() async {
-    Token token = _tokenService.get();
-    http.Response response = await http.get(
-      await _abstractService.getUrl('name'),
-      headers: token.sendToken(),
-    );
-    _authService.refreshToken();
-    if (response.statusCode == 200) {
-      return response.body;
-    }
-    return 'ERROR';
-  }
+  // Future<String> getName() async {
+  //   Token token = _tokenService.get();
+  //   http.Response response = await http.get(
+  //     await _abstractService.getUrl('name'),
+  //     headers: token.sendToken(),
+  //   );
+  //   _authService.refreshToken();
+  //   if (response.statusCode == 200) {
+  //     return response.body;
+  //   }
+  //   return 'ERROR';
+  // }
 }

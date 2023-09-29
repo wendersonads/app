@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
-  await Hive.openBox('tokenStore');
+  await Hive.openBox('token');
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(

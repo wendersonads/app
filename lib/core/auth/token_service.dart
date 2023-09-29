@@ -18,7 +18,7 @@ class TokenService {
   }
 
   delete() {
-    _storage.put('accessToken', '');
+    _storage.put('token', '');
     _storage.put('refreshToken', '');
   }
 }

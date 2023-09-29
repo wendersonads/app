@@ -34,8 +34,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   verifyCurrentToken() async {
     if (_tokenService.exists()) {
-      bool refresh = await _authService.refreshToken();
-      if (refresh) {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
@@ -43,16 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           (route) => false,
         );
-      } else {
-        _tokenService.delete();
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (BuildContext context) => const LoginScreen(),
-          ),
-          (route) => false,
-        );
-      }
     } else {
       Navigator.pushAndRemoveUntil(
         context,

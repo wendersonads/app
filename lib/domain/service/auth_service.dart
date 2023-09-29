@@ -20,19 +20,19 @@ class AuthService {
     return false;
   }
 
-  Future<bool> refreshToken() async {
-    Token token = _tokenService.get();
-    http.Response response = await http.get(
-      await _abstractService.getUrl('refresh'),
-      headers: token.sendRefreshToken(),
-    );
-    if (response.statusCode == 200) {
-      token = Token.fromJson(response.body);
-      _tokenService.save(token);
-      return true;
-    }
-    return false;
-  }
+  // Future<bool> refreshToken() async {
+  //   Token token = _tokenService.get();
+  //   http.Response response = await http.get(
+  //     await _abstractService.getUrl('refresh'),
+  //     headers: token.sendRefreshToken(),
+  //   );
+  //   if (response.statusCode == 200) {
+  //     token = Token.fromJson(response.body);
+  //     _tokenService.save(token);
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   Future<void> logOut() async {
     Token token = _tokenService.get();

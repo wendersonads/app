@@ -71,9 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   getName() async {
     _screenState(false);
-    String result = await _apiService.getName();
+    //String result = await _apiService.getName();
     setState(() {
-      apiName = result;
+      apiName = "";
     });
     _screenState(true);
   }
@@ -81,8 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
   readTokens() {
     _screenState(false);
     Token token = _tokenService.get();
-    accessToken = token.accessToken;
-    refreshToken = token.refreshToken;
+    accessToken = token.token;
     setState(() {});
     _screenState(true);
   }
