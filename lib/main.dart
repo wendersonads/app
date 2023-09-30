@@ -10,7 +10,7 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     const MaterialApp(
-      title: 'authApp',
+      title: 'GPP',
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     ),
