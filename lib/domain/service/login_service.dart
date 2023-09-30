@@ -14,9 +14,6 @@ class LoginService {
 
   Future<bool> tryLogin(String username, String password) async {
     LoginDTO login = LoginDTO(username: username, password: password);
-
-    print(login.toJson());
-
     Response response = await CustomHttp.post(
         await _abstractService.getUrl('login'),
         headers: login.toMap(),
@@ -28,7 +25,5 @@ class LoginService {
         }else{
           return false;
         }
-   
-   
   }
 }
